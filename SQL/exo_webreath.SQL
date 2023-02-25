@@ -40,7 +40,8 @@ CREATE TABLE fraud(
         passenger   Varchar (3) NOT NULL ,
         registered  Varchar (3) NOT NULL ,
         time        Time NOT NULL ,
-        date        Date NOT NULL
+        date        Date NOT NULL,
+        line          Varchar (50) NOT NULL
 	,CONSTRAINT fraud_PK PRIMARY KEY (id_Fraud)
 )ENGINE=InnoDB;
 
