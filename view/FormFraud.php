@@ -7,6 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-    <form action=""></form>
+    <form action="../controller/Router.php?action=createFraud" method="post">
+
+    <label for="passenger">nombre de passagers comptés</label>
+    <input type="number" name="passenger" id="passnger">
+    
+    <label for="registered">nombre d'abonnements validés</label>
+    <input type="number" name="registered" id="registered">
+
+    <label for="time">heure</label>
+    <input type="time" name="time" id="time">
+
+    <label for="date">date</label>
+    <input type="date" name="date" id="date">
+
+    <label for="line">nom de la ligne</label>
+    <input type="text" name="line" id="line">
+
+    <input type="submit" value="Envoyer">
+
+    </form>
 </body>
 </html>

@@ -38,10 +38,12 @@ public function createFraud(){
     VALUES (?,?,?,?,?)");
 
     $stmt->bindValue(1, $this->passenger);
-    $stmt->bindValue(1, $this->registered);
-    $stmt->bindValue(1, $this->time);
-    $stmt->bindValue(1, $this->date);
-    $stmt->bindValue(1, $this->line);
+    $stmt->bindValue(2, $this->registered);
+    $stmt->bindValue(3, $this->time);
+    $stmt->bindValue(4, $this->date);
+    $stmt->bindValue(5, $this->line);
+
+    $stmt->execute();
 
     }catch(PDOException $errors){
         echo $errors->getMessage();
