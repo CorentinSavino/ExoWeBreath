@@ -37,6 +37,8 @@ public function createFraud(){
     $stmt=$dbh->prepare("INSERT INTO fraud (passenger, registered, time, date, line)
     VALUES (?,?,?,?,?)");
 
+    //date covesrion
+
     $stmt->bindValue(1, $this->passenger);
     $stmt->bindValue(2, $this->registered);
     $stmt->bindValue(3, $this->time);
@@ -66,7 +68,14 @@ try{
 
 }catch(PDOException $errors){
     echo $errors->getMessage();
-}
+}}
+
+public static function findBydate($date){
+
+    $db= new DB;
+    $dbh= $db->getDBH();
+
+    $stmt=$dbh->prepare("SELECT*FROM fraud WHERE `date`=?")
 
 }
 
