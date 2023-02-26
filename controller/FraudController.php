@@ -17,6 +17,23 @@ $create->createFraud();
 
 }
 
+public static function findDate($date){
+    
+Fraud::findBydate($date);
+
+require("../view/dashboard.php");
+
+}
+
+public static function findLine($line){
+    
+    Fraud::findByline($line);
+
+    require("../view/dashboard.php");
+
+
+}
+
 
 }
 

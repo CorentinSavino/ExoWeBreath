@@ -53,31 +53,41 @@ public function createFraud(){
 
 }
 
-// get all the infos from the DB
+// get all the infos from the date 
 
-public static function findAllFraud(){
-    
+public static function findBydate($date){
+
 try{
 
     $db= new DB;
     $dbh= $db->getDBH();
 
-    $stmt=$dbh->query("SELECT*FROM fraud");
+    $stmt=$dbh->prepare("SELECT*FROM fraud WHERE `date`=?");
 
-    return $stmt->fetchAll();
+    $stmt->bindValue(1, $date);
+
+    return $stmt->fetch();
 
 }catch(PDOException $errors){
     echo $errors->getMessage();
 }}
 
-public static function findBydate($date){
+public static function findByline($line){
 
-    $db= new DB;
-    $dbh= $db->getDBH();
-
-    $stmt=$dbh->prepare("SELECT*FROM fraud WHERE `date`=?")
-
-}
+    try{
+    
+        $db= new DB;
+        $dbh= $db->getDBH();
+    
+        $stmt=$dbh->prepare("SELECT*FROM fraud WHERE `line`=?");
+    
+        $stmt->bindValue(1, $line);
+    
+        return $stmt->fetch();
+    
+    }catch(PDOException $errors){
+        echo $errors->getMessage();
+    }}
 
 }
 
